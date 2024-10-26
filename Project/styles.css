@@ -1,0 +1,213 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+  }
+  
+  /* Left Content (Logo) */
+  .left-content {
+    flex: 1; /* Ensures the logo stays on the left */
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+  }
+  
+  /* Center navigation links */
+  .navigation {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .navigation a {
+    margin: 0 15px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Right Content (Search + Icons) */
+  .right-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensures the content is pushed to the far right */
+    flex: 1;
+  }
+  
+  /* Search bar */
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 180px;
+    margin-right: 20px; /* Space between search bar and icons */
+  }
+  
+  /* Icon styling */
+  .icons a {
+    margin-left: 15px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .icons a i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .icons a i:hover {
+    color: #ff009d; /* Hover effect */
+  }
+  
+  .main-banner {
+    background-image: url('Pictures/e71f480bd75e40b75dfb3b18e5611f45.jpg'); /* Replace with your actual image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    position: relative; /* Add relative positioning to contain the next button */
+  }
+  
+  .banner-content {
+    text-align: left;
+    color: #fff;
+  }
+  
+  /* Main Banner with Background Image */
+  .banner-content h2 {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+  }
+  
+  .shop-btn {
+    padding: 15px 30px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .shop-btn:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Next Button */
+  .next-btn {
+    position: absolute;
+    right: 20px; /* Adjust position from the right side */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+    padding: 15px;
+    border-radius: 50%;
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+    color: #fff;
+  }
+  
+  .next-btn i {
+    font-size: 24px;
+  }
+  
+  .collection {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .product-item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .product-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .product-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .product-item p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .product-item .price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sizes span {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .add-to-cart {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-to-cart:hover {
+    background-color: #ff6600;
+  }
+  
