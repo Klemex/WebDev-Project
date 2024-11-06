@@ -1,0 +1,152 @@
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #FFC107;
+}
+
+header h3 {
+    font-size: 18px;
+    color: black;
+}
+
+header a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Main container styling */
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #FFC107;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* Logo section */
+.logo-section {
+    flex: 1;
+    text-align: center;
+    font-size: 48px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Login form styling */
+.login-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+}
+
+.login-form .icon {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.login-form h2 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Input styling */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+.input-group i {
+    margin-right: 10px;
+    color: #666;
+}
+
+.input-group input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+
+/* Sign-in button styling */
+button[type="submit"] {
+    background-color: #00aaff;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0091cc;
+}
+
+/* Social login styling */
+.social-login {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.social-login span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.social-login button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.facebook {
+    background-color: #3b5998;
+    color: white;
+}
+
+.google {
+    background-color: #db4437;
+    color: white;
+}
+
+.facebook:hover {
+    background-color: #2d4373;
+}
+
+.google:hover {
+    background-color: #c23321;
+}
