@@ -1,17 +1,17 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const port = 3000;
 
-// Set the Front-end folder as the static folder
+// Serve static files from the Front-end directory
 app.use(express.static(path.join(__dirname, '../Front-end')));
 
-// Serve the index.html file for the root route
+// Basic route for the home page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../Front-end/index.html'));
 });
 
-// Set the port
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+// Start the server
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
 });

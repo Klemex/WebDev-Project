@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals - Fashion Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="new-arrival.css">
+    <link rel="stylesheet" href="favorites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collection.html">Collection</a></li>
+                <li><a href="Mens.html">Men</a></li>
+                <li><a href="women.html">Women</a></li>
+                <li><a href="new-arrival.html" class="active">New Arrivals</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="new-arrivals-section">
+            <h1>New Arrivals</h1>
+            <div class="filter-section">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="accessories">Accessories</option>
+                </select>
+                <select id="sort-filter">
+                    <option value="newest">Newest First</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                </select>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-item" data-category="women">
+                    <div class="product-image">
+                        <img src="Pictures/2345715567bdafb7e54f11fcfa316ba8.jpg" alt="Elegant Summer Dress">
+                        <div class="quick-view">
+                            <a href="product-details.html?id=1">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Summer Dress</h3>
+                        <p>Perfect for summer occasions</p>
+                        <span class="price">$99.99</span>
+                        <div class="size-options">
+                            <span class="size-label">S</span>
+                            <span class="size-label">M</span>
+                            <span class="size-label">L</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="favorite-btn" data-product-id="1">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart-btn" data-product-id="1">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-item" data-category="men">
+                    <div class="product-image">
+                        <img src="Pictures/84ed348d9f1d6cc6f8ee3a48637e3f59.jpg" alt="Classic Denim Jacket">
+                        <div class="quick-view">
+                            <a href="product-details.html?id=2">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Denim Jacket</h3>
+                        <p>Timeless style for any occasion</p>
+                        <span class="price">$129.99</span>
+                        <div class="size-options">
+                            <span class="size-label">M</span>
+                            <span class="size-label">L</span>
+                            <span class="size-label">XL</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="favorite-btn" data-product-id="2">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart-btn" data-product-id="2">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-item" data-category="accessories">
+                    <div class="product-image">
+                        <img src="Pictures/e71f480bd75e40b75dfb3b18e5611f45.jpg" alt="Designer Handbag">
+                        <div class="quick-view">
+                            <a href="product-details.html?id=3">Quick View</a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Handbag</h3>
+                        <p>Luxury meets functionality</p>
+                        <span class="price">$199.99</span>
+                        <div class="product-actions">
+                            <button class="favorite-btn" data-product-id="3">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="add-to-cart-btn" data-product-id="3">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Your premier destination for fashion and style.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: info@fashionstore.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Fashion Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/products-data.js"></script>
+    <script src="js/favorites.js"></script>
+    <script>
+        // Add filtering functionality
+        document.getElementById('category-filter').addEventListener('change', function(e) {
+            const category = e.target.value;
+            const products = document.querySelectorAll('.product-item');
+            
+            products.forEach(product => {
+                if (category === 'all' || product.dataset.category === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

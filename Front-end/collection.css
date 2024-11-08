@@ -18,18 +18,51 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    background-color: #FFC107;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #000;
-    margin-right: 1em;
+    background-color: #E5FF00;
 }
 
 .navbar .logo {
     font-weight: bold;
     font-size: 1.5em;
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5em;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.nav-icons input[type="text"] {
+    padding: 0.5em;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+.nav-icons a {
+    color: #000;
+    font-size: 1.2em;
+    text-decoration: none;
 }
 
 .navbar .icons a {
@@ -56,20 +89,20 @@ body {
 }
 
 .product-item {
-    background-color: #fff;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 250px;
-    margin: 0 auto;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .product-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .product-item img {
@@ -108,70 +141,91 @@ body {
 }
 
 .product-item .add-to-cart {
-    background-color: #000;
-    color: #fff;
-    padding: 0.5em 1em;
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .product-item .add-to-cart:hover {
-    background-color: #333;
+    background-color: #555;
 }
 
-.favorite-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5em;
+.product-item .add-to-cart i {
+    font-size: 18px;
+}
+
+/* Add size selector styles */
+.size-selector {
+    margin: 15px 0;
+}
+
+.size-selector p {
+    font-size: 14px;
     color: #666;
-    z-index: 1;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    padding: 5px;
+    margin-bottom: 8px;
 }
 
-.favorite-btn:hover {
-    color: #ff0000;
-    transform: scale(1.1);
+.sizes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.favorite-btn.active {
-    color: #ff0000;
-    animation: heartBeat 0.3s ease-in-out;
-}
-
-@keyframes heartBeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-.favorite-btn.active i {
-    color: red;
-}
-
-.favorite-btn {
-    background: none;
-    border: none;
+.size-option {
+    position: relative;
     cursor: pointer;
-    padding: 5px;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    z-index: 1;
 }
 
-.favorite-btn i {
-    font-size: 1.5em;
-    transition: color 0.3s ease;
+.size-option input {
+    display: none;
 }
 
-.favorite-btn:hover i {
-    color: red;
+.size-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.size-option input:checked + .size-label {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+.size-option:hover .size-label {
+    border-color: #333;
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-item[style*="display: none"] {
+    opacity: 0;
+}
+
+.product-item[style*="display: block"] {
+    opacity: 1;
 }

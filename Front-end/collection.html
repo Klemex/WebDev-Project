@@ -18,15 +18,14 @@
         <a href="index.html" class="logo">Sole Haven</a>
         <div class="nav-links">
             <a href="new-arrival.html">New & Featured</a>
-            <a href="collection.html">Collection</a>
-            <a href="services.html">Services</a>
+            <a href="collection.html" class="active">Collection</a>
             <a href="Mens.html">Men</a>
             <a href="women.html">Women</a>
             <a href="kids.html">Kids</a>
         </div>
         <div class="nav-icons">
             <input type="text" placeholder="Search...">
-            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="favorites.html"><i class="fas fa-heart"></i></a>
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
             <a href="#"><i class="fas fa-user"></i></a>
         </div>
@@ -36,1837 +35,824 @@
 <section class="collection">
     <div class="container">
         <!-- Product 1 -->
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=1" class="product-link">
+                <img src="Pictures/2345715567bdafb7e54f11fcfa316ba8.jpg" alt="Fragment">
+                <h3>Fragment</h3>
+                <p>Premium quality sneakers with unique design elements.</p>
+                <span class="price">₱4,600.00</span>
             </a>
-            <img src="Pictures/2345715567bdafb7e54f11fcfa316ba8.jpg" alt="Fragment">
-            <h3>Fragment</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱4,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-1" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-1" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-1" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-1" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
             </div>
-            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
         </div>
 
         <!-- Repeat similar blocks for more products -->
         <!-- Product 2 to Product 24 -->
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=2" class="product-link">
+                <img src="Pictures/7857e1fc08bb25f8706c3ae245568f7b.jpg" alt="Travis">
+                <h3>Travis</h3>
+                <p>Stylish collaboration sneakers with premium materials.</p>
+                <span class="price">₱1,240.00</span>
             </a>
-            <img src="Pictures/7857e1fc08bb25f8706c3ae245568f7b.jpg" alt="Street Sneakers">
-            <h3>Travis</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱1,240.00</span>
-            <div class="sizes">
-                <span>39</span><span>40</span><span>41</span><span>43</span>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-2" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-2" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-2" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-2" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
             </div>
-            <button class="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
         </div>
 
         <!-- Continue duplicating blocks, changing images, names, prices, and sizes as necessary -->
         <!-- Product 3 to Product 24 -->
         
         <!-- Example for Product 3 -->
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=3" class="product-link">
+                <img src="Pictures/NIKE+DUNK+LOW+RETRO.png" alt="Nike Dunk Low Retro">
+                <h3>Nike Dunk Low Retro</h3>
+                <p>Classic basketball-inspired design with modern comfort.</p>
+                <span class="price">₱3,200.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-3" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-3" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-3" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-3" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=4&name=Nike SB Malor&price=2600&image=Pictures/NIKE+SB+MALOR.png" class="product-link">
+                <img src="Pictures/NIKE+SB+MALOR.png" alt="Nike SB Malor">
+                <h3>Nike SB Malor</h3>
+                <p>Professional skateboarding shoes with enhanced durability.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-4" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-4" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-4" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-4" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=5&name=Nike Go FlyEase&price=2600&image=Pictures/NIKE+GO+FLYEASE.png" class="product-link">
+                <img src="Pictures/NIKE+GO+FLYEASE.png" alt="Nike Go FlyEase">
+                <h3>Nike Go FlyEase</h3>
+                <p>Innovative hands-free entry with FlyEase technology.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-5" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-5" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-5" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-5" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
 
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
-            <span class="price">₱2,600.00</span>
-            <div class="sizes">
-                <span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-            <button class="add-to-cart">Add to Cart</button>
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=6&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-6" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-6" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-6" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-6" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="women">
+            <a href="product-details.html?id=7&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-7" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-7" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-7" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-7" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="women">
+            <a href="product-details.html?id=8&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-8" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-8" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-8" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-8" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=9&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-9" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-9" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-9" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-9" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=10&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-10" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-10" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-10" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-10" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=11&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-11" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-11" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-11" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-11" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=12&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-12" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-12" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-12" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-12" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=13&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-13" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-13" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-13" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-13" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=14&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-14" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-14" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-14" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-14" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=15&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-15" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-15" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-15" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-15" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=16&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-16" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-16" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-16" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-16" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=17&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-17" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-17" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-17" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-17" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=18&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-18" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-18" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-18" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-18" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=19&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-19" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-19" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-19" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-19" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=20&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-20" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-20" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-20" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-20" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=21&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-21" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-21" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-21" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-21" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=22&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-22" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-22" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-22" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-22" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=23&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-23" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-23" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-23" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-23" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="product-item" data-category="men">
+            <a href="product-details.html?id=24&name=Street T-Shirt&price=2600&image=Pictures/e7d594974256984c501450438c01df02.jpg" class="product-link">
+                <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
+                <h3>Street T-Shirt</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pellentesque pretium neque, et accumsan enim gravida in.</p>
+                <span class="price">₱2,600.00</span>
+            </a>
+            <div class="size-selector">
+                <p>Select Size:</p>
+                <div class="sizes">
+                    <label class="size-option">
+                        <input type="radio" name="size-24" value="40">
+                        <span class="size-label">40</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-24" value="41">
+                        <span class="size-label">41</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-24" value="42">
+                        <span class="size-label">42</span>
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size-24" value="43">
+                        <span class="size-label">43</span>
+                    </label>
+                </div>
+            </div>
+            <button class="add-to-cart">
+                <i class="fas fa-shopping-cart"></i>
+                Add to Cart
+            </button>
         </div>
-
-        <div class="product-item">
-            <a href="favorites.html" class="favorite-btn">
-                <i class="fas fa-heart"></i>
-            </a>
-            <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Street T-Shirt">
-            <h3>Street T-Shirt</h3>
-        

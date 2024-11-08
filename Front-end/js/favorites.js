@@ -1,33 +1,93 @@
-function toggleFavorite(button) {
-    // Toggle active class for visual feedback
-    button.classList.toggle('active');
-    
-    // Get product information
-    const productItem = button.closest('.product-item');
-    const productInfo = {
-        image: productItem.querySelector('img').src,
-        name: productItem.querySelector('h3').textContent,
-        price: productItem.querySelector('.price').textContent,
-        description: productItem.querySelector('p').textContent,
-        sizes: Array.from(productItem.querySelectorAll('.sizes span')).map(span => span.textContent)
-    };
+document.addEventListener('DOMContentLoaded', () => {
+    displayFavorites();
+});
 
-    // Get existing favorites from localStorage
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+function displayFavorites() {
+    const favoritesContainer = document.querySelector('.favorites-container');
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    // Check if item is already in favorites
-    const existingIndex = favorites.findIndex(item => item.name === productInfo.name);
-
-    if (existingIndex === -1) {
-        // Add to favorites
-        favorites.push(productInfo);
-        button.querySelector('i').style.color = '#ff0000';
-    } else {
-        // Remove from favorites
-        favorites.splice(existingIndex, 1);
-        button.querySelector('i').style.color = '#666';
+    if (!favoritesContainer) {
+        console.error('Favorites container not found');
+        return;
     }
 
-    // Save updated favorites to localStorage
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-} 
+    if (favorites.length === 0) {
+        favoritesContainer.innerHTML = `
+            <div class="empty-favorites">
+                <i class="fas fa-heart-broken"></i>
+                <p>No favorites added yet!</p>
+                <a href="collection.html" class="browse-btn">Browse Collection</a>
+            </div>`;
+        return;
+    }
+
+    const favoritesHTML = favorites.map(product => `
+        <div class="product-card" data-product-id="${product.id}">
+            <div class="product-image">
+                <img src="${product.mainImage}" alt="${product.name}">
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <p class="price">₱${product.price.toLocaleString()}</p>
+                <div class="product-card-actions">
+                    <a href="product-details.html?id=${product.id}" class="view-details">View Details</a>
+                    <button class="remove-favorite" onclick="removeFromFavoritesList(${product.id})">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+
+    favoritesContainer.innerHTML = favoritesHTML;
+
+    // Add click event listeners for remove buttons
+    document.querySelectorAll('.remove-favorite').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const productCard = button.closest('.product-card');
+            const productId = parseInt(productCard.dataset.productId);
+            removeFromFavoritesList(productId);
+        });
+    });
+}
+
+function removeFromFavoritesList(productId) {
+    console.log('Removing product:', productId);
+    const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+    
+    if (productCard) {
+        // Add fade-out animation
+        productCard.style.opacity = '0';
+        productCard.style.transform = 'scale(0.8)';
+        
+        // Wait for animation to complete before removing
+        setTimeout(() => {
+            if (removeFromFavorites(productId)) {
+                displayFavorites(); // Refresh the display
+                showNotification('Product removed from favorites');
+            } else {
+                // If removal failed, revert the animation
+                productCard.style.opacity = '1';
+                productCard.style.transform = 'scale(1)';
+                showNotification('Failed to remove product', 'error');
+            }
+        }, 300);
+    }
+}
+
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    // Trigger animation
+    setTimeout(() => notification.classList.add('show'), 10);
+
+    // Remove notification after delay
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    }, 2000);
+}

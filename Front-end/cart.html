@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Sole Haven</title>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Sole Haven</a>
+            <div class="nav-links">
+                <a href="new-arrival.html">New & Featured</a>
+                <a href="collection.html">Collection</a>
+                
+                <a href="Mens.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="kids.html">Kids</a>
+            </div>
+            <div class="nav-icons">
+                <input type="text" placeholder="Search...">
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="login.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+        <h1>Shopping Cart</h1>
+        
+        <div class="cart-layout">
+            <div class="cart-items">
+                <!-- Sample Cart Item -->
+                <div class="cart-item">
+                    <img src="Pictures/e7d594974256984c501450438c01df02.jpg" alt="Product Image" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <h3>Nike Air Max</h3>
+                        <p class="item-category">Men's Shoes</p>
+                        <p class="item-size">Size: US 10</p>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1" class="quantity-input">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-item-price">
+                        <p class="price">$199.99</p>
+                        <button class="remove-item"><i class="fas fa-trash"></i> Remove</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span>$199.99</span>
+                </div>
+                <div class="summary-item">
+                    <span>Shipping</span>
+                    <span>$10.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total</span>
+                    <span>$209.99</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Sole Haven</h3>
+                <p>Your premier destination for authentic sneakers and streetwear.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Returns</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add this before closing </body> tag -->
+    <script src="./js/products-data.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>
