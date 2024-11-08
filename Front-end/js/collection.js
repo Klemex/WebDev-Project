@@ -187,3 +187,43 @@ document.querySelectorAll('.product-item').forEach(item => {
         favBtn.classList.add('active');
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the current page URL
+    const currentPage = window.location.pathname.split('/').pop();
+    console.log('Current page:', currentPage); // Debug log
+    
+    // Get all product items
+    const products = document.querySelectorAll('.product-item');
+    console.log('Found products:', products.length); // Debug log
+    
+    // Filter products based on the current page
+    switch(currentPage) {
+        case 'Mens.html':
+            console.log('Filtering for mens category'); // Debug log
+            filterProducts('mens');
+            break;
+        case 'women.html':
+            filterProducts('womens');
+            break;
+        case 'kids.html':
+            filterProducts('kids');
+            break;
+        case 'collection.html':
+            // Show all products
+            products.forEach(product => product.style.display = 'block');
+            break;
+    }
+    
+    function filterProducts(category) {
+        console.log('Filtering for category:', category); // Debug log
+        products.forEach(product => {
+            console.log('Product category:', product.dataset.category); // Debug log
+            if (product.dataset.category === category) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    }
+});

@@ -1,0 +1,15 @@
+/* Common styles shared across pages */
+:root {
+    /* Define your variables here */
+    --primary-color: #your-color;
+    --secondary-color: #your-color;
+}
+
+/* Common components styling */
+.button {
+    /* Common button styles */
+}
+
+.container {
+    /* Common container styles */
+} 

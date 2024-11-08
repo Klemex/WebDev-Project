@@ -14,7 +14,7 @@ body {
 
 /* Header and Navigation Styles */
 header {
-    background-color: #ebff00;
+  background-color: #FFC107; /* Bright yellow background */
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
