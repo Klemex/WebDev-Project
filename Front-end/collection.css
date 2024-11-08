@@ -90,7 +90,7 @@ body {
 
 .product-item {
     position: relative;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     background: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -128,7 +128,7 @@ body {
     font-weight: bold;
     color: #000;
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .product-item .sizes span {
@@ -163,57 +163,6 @@ body {
 
 .product-item .add-to-cart i {
     font-size: 18px;
-}
-
-/* Add size selector styles */
-.size-selector {
-    margin: 15px 0;
-}
-
-.size-selector p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-}
-
-.sizes {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.size-option {
-    position: relative;
-    cursor: pointer;
-}
-
-.size-option input {
-    display: none;
-}
-
-.size-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.size-option input:checked + .size-label {
-    background-color: #333;
-    color: white;
-    border-color: #333;
-}
-
-.size-option:hover .size-label {
-    border-color: #333;
 }
 
 .product-link {
