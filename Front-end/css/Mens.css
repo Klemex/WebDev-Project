@@ -18,13 +18,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    background-color: #E5FF00;
+    background-color: #000000;
 }
 
 .navbar .logo {
     font-weight: bold;
     font-size: 1.5em;
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -34,14 +34,14 @@ body {
 }
 
 .nav-links a {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .nav-links a.active {
-    color: #000;
+    color: #fdfdfd;
     font-weight: bold;
     text-decoration: underline;
 }
@@ -60,7 +60,7 @@ body {
 }
 
 .nav-icons a {
-    color: #000;
+    color: #ffffff;
     font-size: 1.2em;
     text-decoration: none;
 }

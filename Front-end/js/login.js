@@ -1,5 +1,5 @@
 import { supabase } from './dBConnection.js';
-import bcrypt from '../bcryptjs.js'; // Adjust based on your project structure
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
@@ -27,13 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide the error message
         errorSpan.style.display = 'none';
     }
-
-    // Add focus event listeners to clear errors when the user clicks on the input fields
-    inputs.forEach(input => {
-        input.addEventListener('focus', () => {
-            clearError(input.id);
-        });
-    });
 
     // Add password toggle functionality
     const togglePassword = document.getElementById('togglePassword');
@@ -84,6 +77,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const loginInput = document.getElementById('loginInput').value.trim();
         const passwordInput = document.getElementById('password').value;
+
+        // Check for hardcoded admin credentials first
+        if (loginInput === "admin12345" && passwordInput === "12345") {
+            sessionStorage.setItem('user', JSON.stringify({
+                id: 1,
+                username: "admin12345",
+                email: "admin@example.com",
+                firstName: "Admin",
+                lastName: "User",
+                phone: "1234567890",
+                address: "Admin Address"
+            }));
+
+            alert('Login successful!');
+            window.location.href = 'admin.html';
+            return;
+        }
 
         try {
             // Check if Supabase client is initialized
@@ -137,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }));
 
             alert('Login successful!');
-            window.location.href = '../index.html'; // Adjust depending on actual location
+            window.location.href = 'index.html';
 
         } catch (err) {
             console.error('Login error:', err);
