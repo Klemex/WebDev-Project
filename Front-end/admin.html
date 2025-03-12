@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Sole Haven</title>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Sole Haven</a>
+            <div class="nav-links">
+                <a href="new-arrival.html">New & Featured</a>
+                <a href="collection.html">Collection</a>
+                <a href="Mens.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="kids.html">Kids</a>
+            </div>
+            <div class="nav-icons">
+                <input type="text" placeholder="Search...">
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="admin-container">
+        <h1>Shoe Management Dashboard</h1>
+        
+        <!-- Add New Shoe Form -->
+        <div class="admin-section">
+            <h2>Add New Shoe</h2>
+            <form id="addShoeForm" class="admin-form">
+                <input type="text" placeholder="Shoe Name" required>
+                <input type="number" placeholder="Price" required>
+                <input type="text" placeholder="Brand" required>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="kids">Kids</option>
+                </select>
+                <input type="file" accept="image/*" required>
+                <textarea placeholder="Description" required></textarea>
+                <button type="submit" class="admin-btn">Add Shoe</button>
+            </form>
+        </div>
+
+        <!-- Manage Existing Shoes -->
+        <div class="admin-section">
+            <h2>Manage Shoes</h2>
+            <div class="shoe-list">
+                <!-- Example of a shoe item -->
+                <div class="shoe-item">
+                    <img src="placeholder.jpg" alt="Shoe">
+                    <div class="shoe-details">
+                        <h3>Nike Air Max</h3>
+                        <p>$199.99</p>
+                        <div class="action-buttons">
+                            <button class="admin-btn edit">Edit</button>
+                            <button class="admin-btn delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

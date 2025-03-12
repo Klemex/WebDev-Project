@@ -15,22 +15,22 @@
         <div class="login-form">
             <i class="fas fa-user-circle icon"></i>
             <h2>Login</h2>
-            <form>
+            <form id="loginForm" novalidate>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" id="username" placeholder="Username">
                 </div>
+                <span class="error-message" id="usernameError"></span>
+                
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Password">
                 </div>
-                <button type="submit">Next</button>
+                <span class="error-message" id="passwordError"></span>
+                
+                <button type="submit" id="loginBtn">Next</button>
+                <p class="register-link">Not yet registered? <a href="register.html">Click here</a></p>
             </form>
-            <div class="social-login">
-                <span>----------- or -----------</span>
-                <button class="facebook"><i class="fab fa-facebook"></i> Facebook</button>
-                <button class="google"><i class="fab fa-google"></i> Google</button>
-            </div>
         </div>
     </div>
 </body>
