@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Show success message and redirect
             alert('Login successful!');
-            window.location.href = 'index.html';
+            window.location.href = '../index.html'; // Adjust depending on actual location
 
         } catch (err) {
             console.error('Login error:', err);

@@ -1,118 +1,144 @@
-let currentProduct = null;
+const productsData = {
+    1: {
+        name: "Fragment Design x Nike",
+        brand: "Nike",
+        category: "Men's Shoes",
+        price: "₱4,600.00",
+        color: "Black/Blue",
+        description: "The Fragment Design x Nike collaboration brings together Hiroshi Fujiwara's minimalist aesthetic with Nike's innovative design. This exclusive sneaker features premium materials, iconic Fragment lightning bolt detailing, and superior comfort.",
+        sizes: ["40", "41", "42", "43", "44", "45"],
+        mainImage: "assets/2345715567bdafb7e54f11fcfa316ba8.jpg",
+        additionalImages: [
+            "assets/2345715567bdafb7e54f11fcfa316ba8.jpg",
+            "assets/fragment_angle2.jpg",
+            "assets/fragment_angle3.jpg",
+            "assets/fragment_detail1.jpg"
+        ],
+        details: [
+            "Premium leather upper",
+            "Fragment Design signature lightning bolt logo",
+            "Foam midsole for lightweight cushioning",
+            "Rubber outsole for durability",
+            "Collaboration between Fragment Design and Nike",
+            "Limited Edition Release",
+            "Style Code: DJ4692-400"
+        ],
+        releaseDate: "2023-08-15",
+        technology: [
+            "Nike Air cushioning",
+            "Premium leather construction",
+            "Custom Fragment Design elements"
+        ],
+        care: [
+            "Wipe clean with a damp cloth",
+            "Store in a cool, dry place",
+            "Use shoe trees to maintain shape"
+        ]
+    },
+    2: {
+        name: "Travis Scott x Nike Air",
+        brand: "Nike",
+        category: "Men's Shoes",
+        price: "₱1,240.00",
+        color: "Brown/White",
+        description: "The Travis Scott x Nike collaboration features a unique reverse swoosh design, premium suede materials, and exclusive Travis Scott branding. This highly sought-after sneaker combines street style with premium craftsmanship.",
+        sizes: ["40", "41", "42", "43", "44", "45"],
+        mainImage: "assets/7857e1fc08bb25f8706c3ae245568f7b.jpg",
+        additionalImages: [
+            "assets/7857e1fc08bb25f8706c3ae245568f7b.jpg",
+            "assets/travis_angle2.jpg",
+            "assets/travis_angle3.jpg",
+            "assets/travis_detail1.jpg"
+        ],
+        details: [
+            "Premium suede upper",
+            "Reverse swoosh design",
+            "Travis Scott signature branding",
+            "Hidden stash pocket",
+            "Cactus Jack logo",
+            "Limited Edition Release",
+            "Style Code: CT5053-001"
+        ],
+        releaseDate: "2023-09-01",
+        technology: [
+            "Nike Air cushioning",
+            "Premium suede construction",
+            "Custom Travis Scott elements"
+        ],
+        care: [
+            "Use suede brush for cleaning",
+            "Apply suede protector before wear",
+            "Store away from direct sunlight"
+        ]
+    },
+    3: {
+        name: "Yeezy Boost 350 V2",
+        brand: "Adidas",
+        category: "Unisex Shoes",
+        price: "₱5,000.00",
+        color: "Cream White",
+        description: "Designed by Kanye West, the Yeezy Boost 350 V2 Cream White stands out for its minimalist aesthetic and innovative features. It includes Adidas' Boost technology for ultimate comfort and performance.",
+        sizes: ["36", "37", "38", "39", "40", "41", "42", "43", "44"],
+        mainImage: "assets/yeezy_cream_main.jpg",
+        additionalImages: [
+            "assets/yeezy_cream_main.jpg",
+            "assets/yeezy_cream_angle2.jpg",
+            "assets/yeezy_cream_angle3.jpg"
+        ],
+        details: [
+            "Primeknit upper",
+            "Boost midsole",
+            "TPU sidewalls for stability",
+            "Rubber outsole for traction",
+            "Minimalist design by Kanye West",
+            "Style Code: CP9366"
+        ],
+        releaseDate: "2023-05-21",
+        technology: [
+            "Adidas Boost cushioning",
+            "Lightweight Primeknit construction"
+        ],
+        care: [
+            "Hand wash with mild detergent",
+            "Air dry away from heat",
+            "Avoid contact with sharp objects"
+        ]
+    }
+};
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded');
-    
-    // Get URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('id');
-    console.log('Product ID:', productId);
-
-    // Get DOM elements
-    const elements = {
-        title: document.querySelector('.product-title'),
-        price: document.querySelector('.product-price'),
-        image: document.querySelector('.main-image img'),
-        description: document.querySelector('.product-description'),
-        breadcrumb: document.querySelector('.breadcrumb span'),
-        sizeContainer: document.querySelector('.sizes'),
-        addToCartBtn: document.querySelector('.add-to-cart'),
-        wishlistBtn: document.querySelector('.add-to-wishlist'),
-        quantityInput: document.querySelector('.quantity-selector input')
-    };
-
-    // Load product data
     const product = productsData[productId];
-    console.log('Product data:', product);
 
     if (!product) {
         console.error('Product not found');
         return;
     }
 
-    // Store current product globally
-    currentProduct = product;
-    
-    // Update UI with product data
+    // Update UI elements
+    const elements = {
+        title: document.querySelector('.product-title'),
+        price: document.querySelector('.product-price'),
+        image: document.querySelector('.main-image img'),
+        description: document.querySelector('.product-description'),
+        breadcrumb: document.querySelector('.breadcrumb span'),
+        sizeContainer: document.querySelector('.sizes')
+    };
     updateProductUI(product, elements);
     setupEventListeners(elements);
 });
 
 function updateProductUI(product, elements) {
-    // Update text content
     elements.title.textContent = product.name;
-    elements.price.textContent = formatPrice(product.price);
+    elements.price.textContent = `₱${product.price.toLocaleString()}.00`;
     elements.description.textContent = product.description;
     elements.breadcrumb.textContent = product.name;
-
-    // Update image
-    const imagePath = getImagePath(product.mainImage);
-    elements.image.src = imagePath;
+    elements.image.src = getImagePath(product.mainImage);
     elements.image.alt = product.name;
-    setupImageHandling(elements.image, imagePath);
-
-    // Update size options with stock status
     updateSizeOptions(product.sizes, elements.sizeContainer);
-    
-    // Update favorite button state
-    updateFavoriteButtonState(product.id);
-}
-
-function setupEventListeners(elements) {
-    // Quantity selector
-    const minusBtn = document.querySelector('.minus');
-    const plusBtn = document.querySelector('.plus');
-
-    minusBtn.addEventListener('click', () => updateQuantity(-1, elements.quantityInput));
-    plusBtn.addEventListener('click', () => updateQuantity(1, elements.quantityInput));
-
-    // Add to cart
-    elements.addToCartBtn.addEventListener('click', handleAddToCart);
-
-    // Add to wishlist
-    elements.wishlistBtn.addEventListener('click', () => handleFavoriteClick(currentProduct));
-}
-
-function handleFavoriteClick(product) {
-    const favoriteBtn = document.getElementById('favoriteBtn');
-    
-    if (!isProductInFavorites(product.id)) {
-        // Add to favorites
-        if (addToFavorites(product)) {
-            favoriteBtn.classList.add('active');
-            favoriteBtn.querySelector('i').style.color = 'red';
-            showNotification('Product added to favorites!');
-        }
-    } else {
-        // Remove from favorites
-        removeFromFavorites(product.id);
-        favoriteBtn.classList.remove('active');
-        favoriteBtn.querySelector('i').style.color = '';
-        showNotification('Product removed from favorites!');
-    }
-}
-
-function updateFavoriteButtonState(productId) {
-    const favoriteBtn = document.getElementById('favoriteBtn');
-    if (isProductInFavorites(productId)) {
-        favoriteBtn.classList.add('active');
-        favoriteBtn.querySelector('i').style.color = 'red';
-    } else {
-        favoriteBtn.classList.remove('active');
-        favoriteBtn.querySelector('i').style.color = '';
-    }
-}
-
-function updateQuantity(change, input) {
-    const currentValue = parseInt(input.value);
-    const newValue = currentValue + change;
-    if (newValue >= 1) {
-        input.value = newValue;
-    }
-}
-
-function formatPrice(price) {
-    return `₱${price.toLocaleString()}.00`;
 }
 
 function getImagePath(imagePath) {
@@ -121,11 +147,28 @@ function getImagePath(imagePath) {
         : imagePath;
 }
 
-function setupImageHandling(imageElement, imagePath) {
-    imageElement.onerror = function() {
-        console.error('Image failed to load:', imagePath);
-        this.src = '../Pictures/placeholder.jpg';
-    };
+function setupEventListeners(elements) {
+    // Add to cart button
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    addToCartBtn.addEventListener('click', () => handleAddToCart(product, elements));
+
+    // Wishlist button
+    const wishlistBtn = document.querySelector('.add-to-wishlist');
+    wishlistBtn.addEventListener('click', () => handleFavoriteClick(product));
+}
+
+function handleAddToCart(product, elements) {
+    const selectedSize = document.querySelector('input[name="size"]:checked');
+    if (!selectedSize) {
+        alert('Please select a size');
+        return;
+    }
+    const quantity = parseInt(document.querySelector('.quantity-selector input').value);
+    console.log(`Added ${quantity} of ${product.name}, size ${selectedSize.value} to cart.`);
+}
+
+function handleFavoriteClick(product) {
+    console.log(`${product.name} added to favorites!`);
 }
 
 function updateSizeOptions(sizes, container) {
@@ -136,35 +179,3 @@ function updateSizeOptions(sizes, container) {
         </label>
     `).join('');
 }
-
-function handleAddToCart() {
-    const selectedSize = document.querySelector('input[name="size"]:checked');
-    if (!selectedSize) {
-        alert('Please select a size');
-        return;
-    }
-
-    const quantity = parseInt(document.querySelector('.quantity-selector input').value);
-    
-    StorageUtils.addToCart(currentProduct, selectedSize.value, quantity);
-    showNotification('Product added to cart successfully!');
-}
-
-function showNotification(message) {
-    // Create notification element if it doesn't exist
-    let notification = document.querySelector('.notification');
-    if (!notification) {
-        notification = document.createElement('div');
-        notification.className = 'notification';
-        document.body.appendChild(notification);
-    }
-
-    // Show message
-    notification.textContent = message;
-    notification.classList.add('show');
-
-    // Hide after 3 seconds
-    setTimeout(() => {
-        notification.classList.remove('show');
-    }, 3000);
-} 

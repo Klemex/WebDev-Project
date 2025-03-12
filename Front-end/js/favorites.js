@@ -30,7 +30,7 @@ function displayFavorites() {
                 <h3>${product.name}</h3>
                 <p class="price">₱${product.price.toLocaleString()}</p>
                 <div class="product-card-actions">
-                    <a href="product-details.html?id=${product.id}" class="view-details">View Details</a>
+                    <a href="../pages/product-details.html?id=${product.id}" class="view-details">View Details</a>
                     <button class="remove-favorite" onclick="removeFromFavoritesList(${product.id})">
                         <i class="fas fa-heart"></i>
                     </button>

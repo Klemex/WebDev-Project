@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Determine which category to show based on the current page
     let categoryToShow = '';
-    if (currentPage.includes('Mens.html')) {
+    if (currentPage.includes('/pages/mens.html')) {
         categoryToShow = 'mens';
-    } else if (currentPage.includes('women.html')) {
+      } else if (currentPage.includes('/pages/women.html')) {
         categoryToShow = 'womens';
-    } else if (currentPage.includes('kids.html')) {
+      } else if (currentPage.includes('/pages/kids.html')) {
         categoryToShow = 'kids';
-    }
-    
+      }
+      
     // If we're on a category page, filter the products
     if (categoryToShow) {
         products.forEach(product => {

@@ -14,7 +14,7 @@ const collectionProducts = {
         category: "men",
         price: "₱4,600.00",
         description: "Premium collaboration sneaker featuring Fragment Design aesthetics.",
-        image: "Pictures/2345715567bdafb7e54f11fcfa316ba8.jpg",
+        image: "assets/pictures/2345715567bdafb7e54f11fcfa316ba8.jpg",
         sizes: ["40", "41", "42", "43"]
     },
     2: {
@@ -23,7 +23,7 @@ const collectionProducts = {
         category: "women",
         price: "₱1,240.00",
         description: "Exclusive Travis Scott collaboration with unique design elements.",
-        image: "Pictures/7857e1fc08bb25f8706c3ae245568f7b.jpg",
+        image: "assets/pictures/7857e1fc08bb25f8706c3ae245568f7b.jpg",
         sizes: ["40", "41", "42", "43"]
     },
     3: {
@@ -32,7 +32,7 @@ const collectionProducts = {
         category: "women",
         price: "₱3,200.00",
         description: "Stylish women's sneakers with premium comfort.",
-        image: "Pictures/e7d594974256984c501450438c01df02.jpg",
+        image: "assets/pictures/e7d594974256984c501450438c01df02.jpg",
         sizes: ["36", "37", "38", "39", "40"]
     },
     4: {
@@ -41,7 +41,7 @@ const collectionProducts = {
         category: "kids",
         price: "₱2,100.00",
         description: "Comfortable and durable kids' running shoes.",
-        image: "Pictures/e7d594974256984c501450438c01df02.jpg",
+        image: "assets/pictures/e7d594974256984c501450438c01df02.jpg",
         sizes: ["32", "33", "34", "35"]
     }
     // Add more products as needed...
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="favorite-btn">
                     <i class="fas fa-heart"></i>
                 </button>
-                <a href="product-details.html?id=${id}" class="product-link">
+                <a href="../pages/product-details.html?id=${id}" class="product-link">
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>

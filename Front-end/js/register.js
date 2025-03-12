@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (error) throw error;
 
             alert('Registration successful!');
-            window.location.href = 'login.html';
+            window.location.href = 'pages/login.html';
         } catch (error) {
             console.error('Error:', error.message);
             alert('Registration failed: ' + error.message);
