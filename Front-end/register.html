@@ -23,6 +23,12 @@
                 <span class="error-message" id="usernameError"></span>
 
                 <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <span class="error-message" id="emailError"></span>
+
+                <div class="input-group">
                     <i class="fas fa-user"></i>
                     <input type="text" id="firstName" placeholder="First Name">
                 </div>
@@ -59,10 +65,10 @@
                 <span class="error-message" id="addressError"></span>
                 
                 <button type="submit" id="registerBtn">Register</button>
+                <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
             </form>
-            <p class="login-link">Already have an account? <a href="login.html">Login here</a></p>
         </div>
     </div>
-    <script src="js/register.js" type="module"></script>
+    <script type="module" src="js/register.js"></script>
 </body>
 </html>
