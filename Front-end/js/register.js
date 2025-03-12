@@ -1,145 +1,172 @@
-import { createUser } from './dBConnection.js';
+import { supabase } from './dBConnection.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Registration page loaded');
-    
     const registerForm = document.getElementById('registerForm');
-    const registerBtn = document.getElementById('registerBtn');
+    const inputs = document.querySelectorAll('.input-group input');
 
-    // Input fields
-    const username = document.getElementById('username');
-    const firstName = document.getElementById('firstName');
-    const lastName = document.getElementById('lastName');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
-    const phone = document.getElementById('phone');
-    const address = document.getElementById('address');
+    // Function to show error
+    function showError(inputId, message) {
+        const inputGroup = document.getElementById(inputId).closest('.input-group');
+        const errorSpan = document.getElementById(`${inputId}Error`);
+        
+        inputGroup.classList.add('error');
+        errorSpan.textContent = message;
+        errorSpan.style.display = 'block';
+    }
 
-    const validateForm = () => {
-        let isValid = true;
+    // Function to clear error
+    function clearError(inputId) {
+        const inputGroup = document.getElementById(inputId).closest('.input-group');
+        const errorSpan = document.getElementById(`${inputId}Error`);
+        
+        inputGroup.classList.remove('error');
+        errorSpan.style.display = 'none';
+    }
 
-        // [Validation code here]
+    // Check if username exists in database
+    async function checkUsernameExists(username) {
+        const { data, error } = await supabase
+            .from('users')
+            .select('username')
+            .eq('username', username)
+            .single();
+        
+        return data !== null;
+    }
 
-        return isValid;
-    };
+    // Check if email exists in database
+    async function checkEmailExists(email) {
+        const { data, error } = await supabase
+            .from('users')
+            .select('email')
+            .eq('email', email)
+            .single();
+        
+        return data !== null;
+    }
 
-    const validateUsername = () => {
-        // Implementation of validateUsername
-        return true; // Placeholder return, actual implementation needed
-    };
+    // Real-time validation for each input
+    inputs.forEach(input => {
+        input.addEventListener('input', () => {
+            validateField(input);
+        });
 
-    const validateName = (element, fieldName) => {
-        // Implementation of validateName
-        return true; // Placeholder return, actual implementation needed
-    };
+        input.addEventListener('blur', async () => {
+            await validateField(input);
+        });
+    });
 
-    const validatePassword = () => {
-        // Implementation of validatePassword
-        return true; // Placeholder return, actual implementation needed
-    };
+    async function validateField(input) {
+        const value = input.value.trim();
 
-    const validateConfirmPassword = () => {
-        // Implementation of validateConfirmPassword
-        return true; // Placeholder return, actual implementation needed
-    };
+        switch(input.id) {
+            case 'username':
+                if (value.length < 3) {
+                    showError('username', 'Username must be at least 3 characters');
+                    return false;
+                }
+                // Check if username exists in database
+                if (await checkUsernameExists(value)) {
+                    showError('username', 'Username already exists');
+                    return false;
+                }
+                clearError('username');
+                break;
 
-    const validatePhone = () => {
-        // Implementation of validatePhone
-        return true; // Placeholder return, actual implementation needed
-    };
+            case 'email':
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showError('email', 'Please enter a valid email address');
+                    return false;
+                }
+                // Check if email exists in database
+                if (await checkEmailExists(value)) {
+                    showError('email', 'Email already exists');
+                    return false;
+                }
+                clearError('email');
+                break;
 
-    const validateAddress = () => {
-        // Implementation of validateAddress
-        return true; // Placeholder return, actual implementation needed
-    };
+            case 'password':
+                const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+                if (!passwordRegex.test(value)) {
+                    showError('password', 'Password must be at least 8 characters with letters and numbers');
+                    return false;
+                }
+                clearError('password');
+                break;
 
-    // Form submission
+            case 'confirmPassword':
+                const password = document.getElementById('password').value;
+                if (value !== password) {
+                    showError('confirmPassword', 'Passwords do not match');
+                    return false;
+                }
+                clearError('confirmPassword');
+                break;
+
+            case 'phone':
+                const phoneRegex = /^\d{11}$/;
+                if (!phoneRegex.test(value)) {
+                    showError('phone', 'Phone number must be exactly 11 digits');
+                    return false;
+                }
+                clearError('phone');
+                break;
+
+            default:
+                if (!value) {
+                    showError(input.id, `${input.id.charAt(0).toUpperCase() + input.id.slice(1)} is required`);
+                    return false;
+                }
+                clearError(input.id);
+        }
+        return true;
+    }
+
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        console.log('Form submission started');
+        let isValid = true;
 
         // Validate all fields
-        const isValid = 
-            validateUsername() &&
-            validateName(firstName, 'First name') &&
-            validateName(lastName, 'Last name') &&
-            validatePassword() &&
-            validateConfirmPassword() &&
-            validatePhone() &&
-            validateAddress();
+        for (const input of inputs) {
+            if (!await validateField(input)) {
+                isValid = false;
+            }
+        }
 
         if (!isValid) {
-            console.log('Form validation failed');
+            // If any field is invalid, shake the form
+            const form = document.querySelector('.register-form');
+            form.style.animation = 'none';
+            form.offsetHeight; // Trigger reflow
+            form.style.animation = 'shake 0.3s ease-in-out';
             return;
         }
 
-        registerBtn.disabled = true;
-        registerBtn.textContent = 'Processing...';
-
         try {
-            console.log('Attempting to create user in database...');
-            
-            const userData = {
-                username: username.value.trim(),
-                f_name: firstName.value.trim(),
-                l_name: lastName.value.trim(),
-                password: password.value,
-                number: phone.value.trim(),
-                address: address.value.trim(),
-                email: username.value.trim() + '@example.com',
-            };
+            // Insert user data into Supabase
+            const { data, error } = await supabase
+                .from('users')
+                .insert([
+                    {
+                        username: document.getElementById('username').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        first_name: document.getElementById('firstName').value.trim(),
+                        last_name: document.getElementById('lastName').value.trim(),
+                        password: document.getElementById('password').value,
+                        phone: document.getElementById('phone').value.trim(),
+                        address: document.getElementById('address').value.trim()
+                    }
+                ]);
 
-            console.log('User data to be sent:', userData);
+            if (error) throw error;
 
-            const createdUser = await createUser(userData);
-            console.log('User created successfully:', createdUser);
-
-            // Create success notification
-            const notification = document.createElement('div');
-            notification.className = 'notification success';
-            notification.innerHTML = `
-                <i class="fas fa-check-circle"></i>
-                Registration successful! Redirecting to login...
-            `;
-            document.body.appendChild(notification);
-
-            // Redirect after showing success message
-            setTimeout(() => {
-                window.location.href = 'login.html';
-            }, 2000);
-            
+            alert('Registration successful!');
+            window.location.href = 'login.html';
         } catch (error) {
-            console.error('Registration error:', error);
-            
-            // Create error notification
-            const notification = document.createElement('div');
-            notification.className = 'notification error';
-
-            if (error.message.includes('duplicate key')) {
-                notification.innerHTML = `
-                    <i class="fas fa-exclamation-circle"></i>
-                    Username already exists
-                `;
-                showError(username, 'Username already exists');
-            } else {
-                notification.innerHTML = `
-                    <i class="fas fa-exclamation-circle"></i>
-                    Registration failed: ${error.message}
-                `;
-            }
-            document.body.appendChild(notification);
-            
-        } finally {
-            registerBtn.disabled = false;
-            registerBtn.textContent = 'Register';
-            
-            // Remove notification after 5 seconds
-            setTimeout(() => {
-                const notifications = document.querySelectorAll('.notification');
-                notifications.forEach(notif => {
-                    notif.remove();
-                });
-            }, 5000);
+            console.error('Error:', error.message);
+            alert('Registration failed: ' + error.message);
         }
     });
 });

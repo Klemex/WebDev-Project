@@ -18,7 +18,7 @@ body {
     display: flex;
     width: 800px;
     height: auto;
-    min-height: 600px;
+    min-height: 500px;
     background-color: #FFD700;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -51,7 +51,6 @@ body {
     padding: 30px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    position: relative;
 }
 
 .icon {
@@ -73,33 +72,20 @@ body {
     max-width: 300px;
     margin-bottom: 5px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
-    position: relative;
     transition: all 0.3s ease;
-    overflow: hidden;
 }
 
 .input-group.error {
-    border-color: #ff3e3e;
-    animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-10px); }
-    75% { transform: translateX(10px); }
-}
-
-.input-group input.error {
-    border-color: #ff0000;
+    border-color: #ef5350;
+    background-color: #ffebee;
 }
 
 .input-group i {
     margin-right: 10px;
     color: #333;
-    transition: color 0.3s ease;
 }
 
 .input-group input {
@@ -108,24 +94,17 @@ body {
     outline: none;
     font-size: 1rem;
     color: #000;
+    background: transparent;
 }
 
 .error-message {
-    color: #ff3e3e;
-    font-size: 0.75rem;
-    margin-top: 5px;
-    transition: all 0.3s ease;
-    height: 20px;
-    opacity: 0;
-    visibility: hidden;
-}
-
-form > div:not(:last-child) {
-    margin-bottom: 15px;
-}
-
-span.error-message:not(:empty) {
-    margin-top: 5px;
+    color: #ef5350;
+    font-size: 12px;
+    text-align: left;
+    display: none;
+    width: 100%;
+    max-width: 300px;
+    padding-left: 5px;
     margin-bottom: 10px;
 }
 
@@ -141,31 +120,14 @@ button[type="submit"] {
     cursor: pointer;
     font-size: 1rem;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-button[type="submit"]:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-button[type="submit"]:active {
-    transform: translateY(0);
-}
-
-button[type="submit"]:disabled {
-    background-color: #cccccc;
-    transform: none;
-    cursor: not-allowed;
 }
 
 .login-link {
     margin-top: 20px;
     text-align: center;
     color: #333;
+    width: 100%;
+    max-width: 300px;
 }
 
 .login-link a {
@@ -178,24 +140,12 @@ button[type="submit"]:disabled {
     text-decoration: underline;
 }
 
-.input-group input::placeholder {
-    color: #999;
-    transition: opacity 0.3s ease;
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
 
-.input-group input:focus::placeholder {
-    opacity: 0.5;
-}
-
-/* Success state */
-.input-group.success {
-    border-color: #28a745;
-}
-
-.input-group.success i {
-    color: #28a745;
-}
-
-.input-group input:focus {
-    background-color: #f8f9fa;
+.input-group.error {
+    animation: shake 0.3s ease-in-out;
 }

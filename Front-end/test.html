@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Test</title>
+</head>
+<body>
+    <h1>Supabase Connection Test</h1>
+    <button id="testButton">Test Database Connection</button>
+    <div id="result" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;"></div>
+
+    <script type="module">
+        // Import Supabase from CDN
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+        // Replace with your actual Supabase URL and Key
+        const SUPABASE_URL = "https://qtfarqhcvjdkxiryqlmw.supabase.co"; // Replace with your actual Supabase URL
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0ZmFycWhjdmpka3hpcnlxbG13Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5ODY2NTMsImV4cCI6MjA1NjU2MjY1M30.Xlcdo56vYswWNsiGVsFUbjOfNdyPSZsUm2ZqUXntuOc"; // Replace with your actual Supabase Anon Key
+
+        // Initialize the Supabase client
+        const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+        
+        // Output element
+        const resultDiv = document.getElementById('result');
+        
+        // Test button
+        document.getElementById('testButton').addEventListener('click', async () => {
+    resultDiv.innerHTML = 'Testing connection...';
+
+    try {
+        // Create a test user object
+        const testUser = {
+            username: 'testuser_' + Date.now(),
+            first_name: 'Test',
+            last_name: 'User',
+            email: 'testuser@example.com', // Ensure this is unique
+            password: 'password123',
+            phone: '123-456-7890',
+            address: 'Test Address'
+        };
+
+        // Log the test data
+        console.log('Attempting to insert test data:', testUser);
+        resultDiv.innerHTML += '<br>Attempting to insert: ' + JSON.stringify(testUser);
+
+        // Try to insert into the users table
+        const { data, error } = await supabase
+            .from('users')
+            .insert([testUser]);
+
+        if (error) {
+            console.error('Error inserting user:', error.message);
+            resultDiv.innerHTML += '<br><strong>Error:</strong> ' + error.message;
+
+            if (error.code === '42P01') {
+                resultDiv.innerHTML += '<br>Table "users" does not exist. Please create it first.';
+            } else if (error.code === '23505') {
+                resultDiv.innerHTML += '<br>Username or email already exists.';
+            } else if (error.code === '42703') {
+                resultDiv.innerHTML += '<br>Column does not exist. Check your table structure.';
+            } else if (error.code === '42501') {
+                resultDiv.innerHTML += '<br>Permission denied. Check RLS policies.';
+            }
+        } else {
+            if (data && data.length > 0) {
+                console.log('User inserted successfully:', data);
+                resultDiv.innerHTML += '<br><strong>Success!</strong> User inserted with ID: ' + data[0].id;
+            } else {
+                console.log('No data returned from the insert operation.');
+                resultDiv.innerHTML += '<br><strong>No data returned from the insert operation.</strong>';
+            }
+        }
+    } catch (err) {
+        console.error('Unexpected error:', err);
+        resultDiv.innerHTML += '<br><strong>Unexpected error:</strong> ' + err.message;
+    }
+});
+
+    </script>
+</body>
+</html>

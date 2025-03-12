@@ -18,20 +18,22 @@
             <form id="loginForm" novalidate>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
-                    <input type="text" id="username" placeholder="Username">
+                    <input type="text" id="loginInput" placeholder="Username / Email / Phone">
                 </div>
-                <span class="error-message" id="usernameError"></span>
-                
+                <span class="error-message" id="loginInputError"></span>
+
                 <div class="input-group">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" placeholder="Password">
+                    <i class="fas fa-eye-slash toggle-password" id="togglePassword"></i>
                 </div>
                 <span class="error-message" id="passwordError"></span>
-                
-                <button type="submit" id="loginBtn">Next</button>
+
+                <button type="submit" id="loginBtn">Login</button>
                 <p class="register-link">Not yet registered? <a href="register.html">Click here</a></p>
             </form>
         </div>
     </div>
+    <script type="module" src="js/login.js"></script>
 </body>
 </html>
