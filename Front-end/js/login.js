@@ -1,27 +1,39 @@
 import { supabase } from './dBConnection.js';
+import bcrypt from '../bcryptjs.js'; // Adjust based on your project structure
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const inputs = document.querySelectorAll('.input-group input');
 
-    // Function to show error
+    // Function to show error and highlight the input container
     function showError(inputId, message) {
         const inputGroup = document.getElementById(inputId).closest('.input-group');
         const errorSpan = document.getElementById(`${inputId}Error`);
         
+        // Add error class to highlight the input container
         inputGroup.classList.add('error');
+        // Display the error message
         errorSpan.textContent = message;
         errorSpan.style.display = 'block';
     }
 
-    // Function to clear error
+    // Function to clear error and remove the highlight
     function clearError(inputId) {
         const inputGroup = document.getElementById(inputId).closest('.input-group');
         const errorSpan = document.getElementById(`${inputId}Error`);
         
+        // Remove error class to unhighlight the input container
         inputGroup.classList.remove('error');
+        // Hide the error message
         errorSpan.style.display = 'none';
     }
+
+    // Add focus event listeners to clear errors when the user clicks on the input fields
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            clearError(input.id);
+        });
+    });
 
     // Add password toggle functionality
     const togglePassword = document.getElementById('togglePassword');
@@ -33,17 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         togglePassword.classList.toggle('fa-eye');
         togglePassword.classList.toggle('fa-eye-slash');
-    });
-
-    // Real-time validation
-    inputs.forEach(input => {
-        input.addEventListener('input', () => {
-            validateField(input);
-        });
-
-        input.addEventListener('blur', () => {
-            validateField(input);
-        });
     });
 
     function validateField(input) {
@@ -73,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         let isValid = true;
 
-        // Validate all fields
         inputs.forEach(input => {
             if (!validateField(input)) {
                 isValid = false;
@@ -86,34 +86,56 @@ document.addEventListener('DOMContentLoaded', () => {
         const passwordInput = document.getElementById('password').value;
 
         try {
-            // Fetch user by username, email, or phone
-            const { data, error } = await supabase
-                .from('users')
-                .select('id, username, email, password, phone')
-                .or(`username.eq.${loginInput},email.eq.${loginInput},phone.eq.${loginInput}`)
-                .single();
-
-            if (error || !data) {
-                console.error('Error fetching user:', error ? error.message : 'User not found');
-                alert('Invalid username or password');
+            // Check if Supabase client is initialized
+            if (!supabase) {
+                console.error('Supabase client is not initialized');
+                alert('Login failed. Please try again.');
                 return;
             }
 
-            // Verify password
-            if (data.password !== passwordInput) {
-                alert('Invalid username or password');
+            // Query the database
+            const { data, error } = await supabase
+                .from('users')
+                .select('*')
+                .or(`email.ilike.${loginInput},username.ilike.${loginInput},phone.ilike.${loginInput}`);
+
+            if (error) {
+                console.error('Database error:', error.message);
+                alert('Login failed. Please check your credentials and try again.');
+                return;
+            }
+
+            if (!data || data.length === 0) {
+                // Highlight both username and password fields if no user is found
+                showError('loginInput', 'Invalid username or password');
+                showError('password', 'Invalid username or password');
+                return;
+            }
+
+            // If multiple users are found, we will just take the first match
+            const user = data[0];
+
+            // Verify password using bcrypt
+            const isPasswordValid = await bcrypt.compare(passwordInput, user.password); // Compare with hashed password
+
+            if (!isPasswordValid) {
+                // Highlight both username and password fields if password is invalid
+                showError('loginInput', 'Invalid username or password');
+                showError('password', 'Invalid username or password');
                 return;
             }
 
             // Store user info in session storage
             sessionStorage.setItem('user', JSON.stringify({
-                id: data.id,
-                email: data.email,
-                username: data.username,
-                phone: data.phone
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                firstName: user.first_name,
+                lastName: user.last_name,
+                phone: user.phone,
+                address: user.address
             }));
 
-            // Show success message and redirect
             alert('Login successful!');
             window.location.href = '../index.html'; // Adjust depending on actual location
 

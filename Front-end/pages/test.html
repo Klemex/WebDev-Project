@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Supabase Connection Test</h1>
-    <button id="testButton">Test Database Connection</button>
+    <button id="insertButton">Insert Test Users</button>
+    <button id="queryButton">Query Users</button>
     <div id="result" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;"></div>
 
     <script type="module">
@@ -24,59 +25,84 @@
         // Output element
         const resultDiv = document.getElementById('result');
         
-        // Test button
-        document.getElementById('testButton').addEventListener('click', async () => {
-    resultDiv.innerHTML = 'Testing connection...';
-
-    try {
-        // Create a test user object
-        const testUser = {
-            username: 'testuser_' + Date.now(),
-            first_name: 'Test',
-            last_name: 'User',
-            email: 'testuser@example.com', // Ensure this is unique
-            password: 'password123',
-            phone: '123-456-7890',
-            address: 'Test Address'
-        };
-
-        // Log the test data
-        console.log('Attempting to insert test data:', testUser);
-        resultDiv.innerHTML += '<br>Attempting to insert: ' + JSON.stringify(testUser);
-
-        // Try to insert into the users table
-        const { data, error } = await supabase
-            .from('users')
-            .insert([testUser]);
-
-        if (error) {
-            console.error('Error inserting user:', error.message);
-            resultDiv.innerHTML += '<br><strong>Error:</strong> ' + error.message;
-
-            if (error.code === '42P01') {
-                resultDiv.innerHTML += '<br>Table "users" does not exist. Please create it first.';
-            } else if (error.code === '23505') {
-                resultDiv.innerHTML += '<br>Username or email already exists.';
-            } else if (error.code === '42703') {
-                resultDiv.innerHTML += '<br>Column does not exist. Check your table structure.';
-            } else if (error.code === '42501') {
-                resultDiv.innerHTML += '<br>Permission denied. Check RLS policies.';
+        // Test users from your database
+        const testUsers = [
+            { 
+                username: 'Hello',
+                first_name: 'David',
+                last_name: 'andoy',
+                password: 'gerolding1417',
+                phone: '09123456789'
+            },
+            { 
+                username: 'davidad',
+                first_name: 'David',
+                last_name: 'davida',
+                password: 'gerolding1417',
+                phone: '09123456789'
+            },
+            { 
+                username: 'Hello2',
+                first_name: 'David',
+                last_name: 'Hello',
+                password: 'gerolding1417',
+                phone: '09123456789'
             }
-        } else {
-            if (data && data.length > 0) {
-                console.log('User inserted successfully:', data);
-                resultDiv.innerHTML += '<br><strong>Success!</strong> User inserted with ID: ' + data[0].id;
-            } else {
-                console.log('No data returned from the insert operation.');
-                resultDiv.innerHTML += '<br><strong>No data returned from the insert operation.</strong>';
-            }
-        }
-    } catch (err) {
-        console.error('Unexpected error:', err);
-        resultDiv.innerHTML += '<br><strong>Unexpected error:</strong> ' + err.message;
-    }
-});
+        ];
+        
+        // Insert button
+        document.getElementById('insertButton').addEventListener('click', async () => {
+            resultDiv.innerHTML = 'Inserting test users...<br>';
 
+            try {
+                for (const user of testUsers) {
+                    const { data, error } = await supabase
+                        .from('users')
+                        .insert([user]);
+
+                    if (error) {
+                        console.error('Error inserting user:', error);
+                        resultDiv.innerHTML += `Error inserting ${user.username}: ${error.message}<br>`;
+                    } else {
+                        resultDiv.innerHTML += `Successfully inserted user: ${user.username}<br>`;
+                    }
+                }
+            } catch (err) {
+                console.error('Unexpected error:', err);
+                resultDiv.innerHTML += `<br>Unexpected error: ${err.message}`;
+            }
+        });
+
+        // Query button
+        document.getElementById('queryButton').addEventListener('click', async () => {
+            resultDiv.innerHTML = 'Querying users...<br>';
+
+            try {
+                const { data: allUsers, error: allUsersError } = await supabase
+                    .from('users')
+                    .select('*');
+
+                console.log("Query Response Data:", allUsers); // For debugging
+                console.log("Query Response Error:", allUsersError); // For debugging
+
+                if (allUsersError) {
+                    resultDiv.innerHTML += `Error fetching users: ${allUsersError.message}<br>`;
+                    return;
+                }
+
+                resultDiv.innerHTML += `Total users in database: ${allUsers.length}<br>`;
+                allUsers.forEach(user => {
+                    resultDiv.innerHTML += `<br>User: ${user.username}<br>`;
+                    resultDiv.innerHTML += `Name: ${user.first_name} ${user.last_name}<br>`;
+                    resultDiv.innerHTML += `Password: ${user.password}<br>`;
+                    resultDiv.innerHTML += `Phone: ${user.phone}<br>`;
+                });
+
+            } catch (err) {
+                console.error('Unexpected error:', err);
+                resultDiv.innerHTML += `<br>Unexpected error: ${err.message}`;
+            }
+        });
     </script>
 </body>
 </html>

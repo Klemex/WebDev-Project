@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         products.forEach(product => {
             if (product.dataset.category !== categoryToShow) {
                 product.style.display = 'none';
-            }
+            }d
         });
     }
 }); 
