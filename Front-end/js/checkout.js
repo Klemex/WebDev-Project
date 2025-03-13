@@ -68,6 +68,21 @@ document.addEventListener("DOMContentLoaded", function() {
             addressInput.classList.add("input-address");
 
             changeAddressBtn.textContent = "Change Address";
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const cartSummary = JSON.parse(localStorage.getItem('cartSummary'));
+            
+                if (!cartSummary) {
+                    console.error('Cart summary not found');
+                    return;
+                }
+            
+                // Update the total price, subtotal, and shipping
+                document.getElementById('total-price').textContent = cartSummary.total.toFixed(2);
+                document.getElementById('subtotal-price').textContent = `₱${cartSummary.subtotal.toFixed(2)}`;
+                document.getElementById('shipping-price').textContent = `₱${cartSummary.shipping.toFixed(2)}`;
+            });
+            
         });
     });
 });

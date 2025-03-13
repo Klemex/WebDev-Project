@@ -1,3 +1,5 @@
+
+
 body {
     font-family: Arial, sans-serif;
 }
@@ -20,6 +22,38 @@ input, textarea, select {
     margin: 5px 0;
     border: 1px solid #ccc;
 }
+
+/* Adjust the navbar style to center the links */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: center; /* This will center the nav links */
+    flex-grow: 1; /* Ensures the links take up the remaining space */
+}
+
+.navbar a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #4CAF50; /* Highlight color on hover */
+}
+
+/* Make sure the content below the header is not hidden */
+main {
+    padding-top: 20px;
+}
+
 
 button {
     padding: 10px;
