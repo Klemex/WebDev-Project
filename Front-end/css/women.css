@@ -1,71 +1,141 @@
-/* Replace entire contents with collection.css styles */
-/* Reset */
+/* Reset styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
+  }
+  
+  /* Body Styles */
+  body {
     font-family: Arial, sans-serif;
-    background-color: #FFC107;
-    color: #000;
-}
-
-/* Navbar */
-.navbar {
+  }
+  
+  /* Navbar Styles */
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em 2em;
-    background-color: #E5FF00;
-}
-
-.navbar .logo {
+    background-color: #333; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .navbar .logo {
     font-weight: bold;
-    font-size: 1.5em;
-    color: #000;
+    font-size: 1.8em;
+    color: #fff;
     text-decoration: none;
-}
-
-.nav-links {
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .logo:hover {
+    color: #FFEB3B; 
+  }
+  
+  .nav-links {
     display: flex;
     gap: 1.5em;
-}
-
-.nav-links a {
-    color: #000;
+  }
+  
+  .nav-links a {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links a.active {
-    color: #000;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.nav-icons {
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #FFEB3B; 
+    transform: scale(1.1); 
+  }
+  
+  .nav-icons {
     display: flex;
     align-items: center;
     gap: 1em;
-}
-
-.nav-icons input[type="text"] {
+  }
+  
+  .nav-icons a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-icons a:hover {
+    color: #FFEB3B; 
+    transform: scale(1.1); 
+  }
+  
+  .nav-icons input[type="text"] {
     padding: 0.5em;
     border-radius: 15px;
     border: 1px solid #ddd;
     outline: none;
-}
-
-.nav-icons a {
+  }
+  
+  /* Main content */
+  .left-content {
+    flex: 1;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
     color: #000;
-    font-size: 1.2em;
+    text-align: left;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .navigation a {
+    margin: 0 15px;
+    color: #000;
     text-decoration: none;
-}
-
+    font-weight: bold;
+  }
+  
+  /* Right content */
+  .right-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .search-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    width: 180px;
+    margin-right: 20px;
+  }
+  
+  .icons a {
+    margin-left: 15px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .icons a i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .icons a:hover i {
+    color: #FFEB3B; 
+  }
+  
+  
 /* Collection Section */
 .collection {
     padding: 2em 4em;
