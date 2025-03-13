@@ -1,24 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Example of dynamically adding products to the order list
-    const orderList = document.getElementById("order-list");
-    const products = [
-        { name: "Product 1", price: 29.99 },
-        { name: "Product 2", price: 15.99 }
-    ];
+    // Retrieve cart data from localStorage
+    const cartSummary = JSON.parse(localStorage.getItem('cartSummary'));
 
-    let totalPrice = 0;
+    if (cartSummary) {
+        // Populate the order summary and total price
+        const orderList = document.getElementById("order-list");
+        const totalPriceElement = document.getElementById("total-price");
 
-    products.forEach(product => {
-        const li = document.createElement("li");
-        li.textContent = `${product.name} - $${product.price.toFixed(2)}`;
-        orderList.appendChild(li);
-        totalPrice += product.price;
-    });
+        // Example products: you can dynamically generate this list based on the cart data
+        const products = [
+            { name: "Product 1", price: 29.99 },
+            { name: "Product 2", price: 15.99 }
+        ];
 
-    // Update total price
-    document.getElementById("total-price").textContent = totalPrice.toFixed(2);
+        products.forEach(product => {
+            const li = document.createElement("li");
+            li.textContent = `${product.name} - $${product.price.toFixed(2)}`;
+            orderList.appendChild(li);
+        });
 
-    // Form submission handlers
+        // Display the subtotal, shipping, and total price
+        document.getElementById("subtotal-price").textContent = `$${cartSummary.subtotal.toFixed(2)}`;
+        document.getElementById("shipping-price").textContent = `$${cartSummary.shipping.toFixed(2)}`;
+        totalPriceElement.textContent = cartSummary.total.toFixed(2);
+    } else {
+        alert("Cart data is missing");
+    }
+
+    // Form submission handlers (address and payment) are the same as before
     const addressForm = document.getElementById("address-form");
     const paymentForm = document.getElementById("payment-form");
     const changeAddressBtn = document.getElementById("change-address-btn");
@@ -26,17 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
     addressForm.addEventListener("submit", function(event) {
         event.preventDefault();
         alert("Address saved!");
-        // Save address logic here
     });
 
     paymentForm.addEventListener("submit", function(event) {
         event.preventDefault();
         alert("Payment successful!");
-        // Payment processing logic here
     });
 
     changeAddressBtn.addEventListener("click", function() {
-        // Enable the address, name, and phone input fields for editing
         const nameInput = document.getElementById("name");
         const phoneInput = document.getElementById("phone");
         const addressInput = document.getElementById("address");
@@ -49,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         phoneInput.classList.remove("input-address");
         addressInput.classList.remove("input-address");
 
-        changeAddressBtn.textContent = "Save Address"; // Change button text to "Save Address"
+        changeAddressBtn.textContent = "Save Address";
         changeAddressBtn.removeEventListener("click", arguments.callee);
         changeAddressBtn.addEventListener("click", function() {
             alert("Address updated!");
@@ -61,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
             phoneInput.classList.add("input-address");
             addressInput.classList.add("input-address");
 
-            changeAddressBtn.textContent = "Change Address"; // Restore the button text
+            changeAddressBtn.textContent = "Change Address";
         });
     });
 });

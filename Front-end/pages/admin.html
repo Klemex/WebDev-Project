@@ -3,65 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="../css/checkout.css">
+    <title>Admin - Sole Haven</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
-
 <body>
-    <div class="checkout-container">
-        <h1>Checkout</h1>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">Sole Haven</a>
+            <div class="nav-links">
+                <a href="new-arrival.html">New & Featured</a>
+                <a href="collection.html">Collection</a>
+                <a href="Mens.html">Men</a>
+                <a href="women.html">Women</a>
+                <a href="kids.html">Kids</a>
+            </div>
+        </nav>
+    </header>
 
-        <div class="order-summary">
-            <h2>Products Ordered</h2>
-            <ul id="order-list">
-                <!-- Product list will be dynamically inserted here -->
-            </ul>
-        </div>
+    <main>
+        <h1>Add New Product</h1>
+        <form id="productForm">
+            <label for="productName">Product Name:</label>
+            <input type="text" id="productName" required>
 
-        <div class="delivery-address">
-            <h2>Delivery Address</h2>
-            <form id="address-form">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" value="John Doe" required>
+            <label for="productImage">Product Image URL:</label>
+            <input type="url" id="productImage" required>
 
-                <label for="address">Street Address</label>
-                <input type="text" id="address" value="123 Main St, Apartment 4B" required>
+            <label for="productDescription">Product Description:</label>
+            <textarea id="productDescription" required></textarea>
 
-                <label for="city">City</label>
-                <input type="text" id="city" value="New York" required>
+            <label for="productPrice">Price:</label>
+            <input type="number" id="productPrice" min="0" required>
 
-                <label for="zipcode">Zip Code</label>
-                <input type="text" id="zipcode" value="10001" required>
+            <label for="productCategory">Category (Men, Women, Kids):</label>
+            <select id="productCategory" required>
+                <option value="mens">Men</option>
+                <option value="womens">Women</option>
+                <option value="kids">Kids</option>
+            </select>
 
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" value="123-456-7890" required>
+            <button type="submit">Add Product</button>
+        </form>
+    </main>
 
-                <button type="submit">Save Address</button>
-                <button type="button" id="change-address-btn">Change Address</button>
-            </form>
-        </div>
-
-        <div class="payment-method">
-            <h2>Payment Method</h2>
-            <form id="payment-form">
-                <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" required>
-
-                <label for="expiry-date">Expiry Date</label>
-                <input type="text" id="expiry-date" required>
-
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" required>
-
-                <button type="submit">Complete Payment</button>
-            </form>
-        </div>
-
-        <div class="checkout-total">
-            <h3>Total: $<span id="total-price">0.00</span></h3>
-        </div>
-    </div>
-
-    <script src="../js/checkout.js"></script>
+    <script src="../js/admin.js"></script>
 </body>
 </html>

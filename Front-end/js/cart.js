@@ -153,6 +153,23 @@ class Cart {
         });
     }
 }
+// Update the "Proceed to Checkout" button logic
+document.querySelector('.checkout-btn').addEventListener('click', () => {
+    const subtotal = this.calculateTotal();
+    const shipping = subtotal >= 3000 ? 0 : 10;
+    const total = subtotal + shipping;
+
+    // Store the cart details in localStorage
+    localStorage.setItem('cartSummary', JSON.stringify({
+        subtotal: subtotal,
+        shipping: shipping,
+        total: total
+    }));
+
+    // Redirect to checkout page
+    window.location.href = 'checkout.html';
+});
+
 
 // Initialize cart when the page loads
 document.addEventListener('DOMContentLoaded', () => {

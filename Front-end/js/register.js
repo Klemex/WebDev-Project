@@ -5,23 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = document.querySelectorAll('.input-group input');
 
     // Function to show error
-    function showError(inputId, message) {
-        const inputGroup = document.getElementById(inputId).closest('.input-group');
-        const errorSpan = document.getElementById(`${inputId}Error`);
-        
-        inputGroup.classList.add('error');
-        errorSpan.textContent = message;
-        errorSpan.style.display = 'block';
-    }
+    // Function to show error
+function showError(inputId, message) {
+    const inputGroup = document.getElementById(inputId).closest('.input-group');
+    const errorSpan = document.getElementById(`${inputId}Error`);
+    
+    inputGroup.classList.add('error');
+    errorSpan.textContent = message;
+    errorSpan.style.display = 'block';
+}
 
-    // Function to clear error
-    function clearError(inputId) {
-        const inputGroup = document.getElementById(inputId).closest('.input-group');
-        const errorSpan = document.getElementById(`${inputId}Error`);
-        
-        inputGroup.classList.remove('error');
-        errorSpan.style.display = 'none';
-    }
+// Function to clear error
+function clearError(inputId) {
+    const inputGroup = document.getElementById(inputId).closest('.input-group');
+    const errorSpan = document.getElementById(`${inputId}Error`);
+    
+    inputGroup.classList.remove('error');
+    errorSpan.style.display = 'none';
+}
+
 
     // Check if username exists in database
     async function checkUsernameExists(username) {
@@ -170,3 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+
+
